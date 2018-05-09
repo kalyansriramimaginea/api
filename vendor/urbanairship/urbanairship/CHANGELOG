@@ -1,0 +1,20 @@
+--------------------
+0.3.0
+--------------------
+- Removed support for Blackberry
+- Updated platform overrides for iOS, Android and Amazon
+- Added support for device lookup
+- Added support for device listing
+- Added support for in-app messages
+- Fixed bug where list_icon sent empty strings if value was not provided
+- Changed httpful requirement to 0.1.2+
+
+--------------------
+0.2.0
+--------------------
+- Added CHANGELOG
+- Removed deprecated last_seen location argument.
+- Added support for pushing to channels.
+- Added support for pushing to named users.
+- Added a user agent string to API requests.
+- Added docs for Android, Amazon, and iOS channels.

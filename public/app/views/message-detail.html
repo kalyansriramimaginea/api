@@ -1,0 +1,108 @@
+<div class="header">
+	<h1>Inbox Message</h1>
+	<div class="clear"></div>
+	<div class="txt-left" hideon="!ctrl.toggleInfo">
+		<p><b>Web:</b> http://#URL#<p>
+		<p><b>Breaking News:</b> dtop://inbox<p>
+		<p><b>Event:</b> dtop://event<p>
+		<p><b>Event Detail:</b> dtop://event/#EVENT_ID#<p>
+		<p><b>Explore:</b> dtop://event<p>
+		<p><b>Explore Detail:</b> dtop://event/#EVENT_ID#<p>
+		<p><b>Map:</b> dtop://map<p>
+		<p><b>Camera:</b> dtop://camera<p>
+		<p><b>Helps:</b> dtop://help<p>
+		<p><b>Helps:</b> dtop://help/#HELP_ID#<p>
+		<p><b>Sponsors:</b> dtop://sponsor<p>
+	</p>
+	<div class="clear"></div>
+</div>
+<form ng-init="ctrl.load()" ng-submit="ctrl.save()">
+	<table>
+		<thead>
+			<tr>
+				<th width="30%">&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+
+		<!-- TEXTAREA -->
+		<tr>
+			<td class="txt-right">
+				<div for="message" >Message:<br/><code>&lt;a href="#URL#"&gt;#TITLE#&lt;/a&gt;</code></div>
+			</td>
+		    <td>
+		    	<textarea id="message" ng-model="ctrl.message.message" ng-trim="false" maxlength="400"></textarea>
+		    </td>
+		</tr>
+		<!-- END TEXTAREA -->
+
+		<!-- MESSAGE TYPES -->
+		<!-- <tr>
+			<td class="txt-right">
+				<label for="messageTypeId">Icon Type:</label>
+			</td>
+			<td>
+				<select id="messageTypeId" ng-change="ctrl.didChange()"
+										ng-model="ctrl.message.messageTypeId"
+										ng-options="messageType.id as messageType.name for messageType in ctrl.messageTypes"></select>
+			</td>
+		</tr> -->
+		<!-- END MESSAGE TYPES -->
+
+		<!-- PHOTO -->
+		<tr>
+		  <td class="txt-right">
+			<label for="photo">Photo:</label>
+		  </td>
+		  <td>
+				<a ng-show="ctrl.message.photoUrl" ng-click="ctrl.removePhotoUrl()">remove</a><br/>
+				<img class="photo" src="{{ctrl.message.photoUrl}}" ng-show="ctrl.message.photoUrl"/>
+				<input name="file" type="file" ng-file-model="ctrl.photoUrlFile" />
+			    <em>Image should not exceed 1500px in width and 2MB in size</em>
+		  </td>
+		</tr>
+		<!-- END PHOTO -->
+
+		<!-- DEEP LINK -->
+		<tr>
+			<td class="txt-right">
+				<label for="deepLink">Deep Link:</label>
+				<br/><a ng-click="ctrl.toggleInfo=!ctrl.toggleInfo">Show Routes</a>
+			</td>
+			<td>
+		  		<input id="deepLink" value="" maxlength="191" type="text" ng-model="ctrl.message.deepLink" />
+			</td>
+		</tr>
+		<!-- END DEEP LINK -->
+
+		<!-- CHANNELS -->
+		<tr>
+			<td class="txt-right">
+				<label for="channels">Channels:</label>
+			</td>
+			<td>
+				<select id="channels" ng-change="ctrl.didChange()"
+										ng-model="ctrl.message.channels"
+										ng-options="channel.value as channel.name for channel in ctrl.channels"></select>
+			</td>
+		</tr>
+		<!-- END CHANNELS -->
+
+		<!-- CUSTOM TIME -->
+		<tr class="customTime">
+			<td class="txt-right">
+				<label>Send At:</label>
+			</td>
+		    <td>
+		    	<input datetime-picker ng-model="ctrl.sendAt" date-format="M/dd/yyyy hh:mm a" />
+		    </td>
+		</tr>
+		<!-- END CUSTOM TIME -->
+
+		</tbody>
+	</table>
+
+	<input class="brand-btn" name="submit" type="submit" value="Submit" />
+	<a class="cancel txt-dk-gray" ng-click="ctrl.cancel()" title="Cancel"><em>cancel</em></a>
+</form>

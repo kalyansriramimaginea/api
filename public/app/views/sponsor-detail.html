@@ -1,0 +1,69 @@
+<div class="header">
+	<h1>Sponsor</h1>
+	<div class="clear"></div>
+</div>
+<form ng-submit="ctrl.save()">
+	<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!-- tier -->
+			<tr>
+				<td class="txt-right">
+					<label for="tierId">Tier:</label>
+				</td>
+				<td>
+					<select id="tierId" ng-change="ctrl.didChange()"
+											ng-model="ctrl.sponsor.tierId"
+											ng-options="tier.id as tier.name for tier in ctrl.tiers"></select>
+				</td>
+			</tr>
+			<!-- END tier -->
+
+			<!-- name -->
+			<tr>
+				<td class="txt-right">
+					<label for="name">Name:</label>
+				</td>
+				<td>
+			  		<input id="name" value="" maxlength="191" type="text" ng-model="ctrl.sponsor.name" />
+				</td>
+			</tr>
+			<!-- END name -->
+
+			<!-- siteUrl -->
+			<tr>
+				<td class="txt-right">
+					<label for="siteUrl">Site Url:</label>
+				</td>
+				<td>
+			  		<input id="siteUrl" value="" maxlength="191" type="text" ng-model="ctrl.sponsor.siteUrl" />
+				</td>
+			</tr>
+			<!-- END siteUrl -->
+
+		    <!-- photoUrl -->
+		    <tr>
+		      <td class="txt-right">
+		        <label for="photoUrl">Photo Url:</label>
+		      </td>
+		      <td>
+					<a ng-show="ctrl.sponsor.photoUrl" ng-click="ctrl.removePhotoUrl()">remove</a><br/>
+					<img class="photoUrl" src="{{ctrl.sponsor.photoUrl}}" ng-show="ctrl.sponsor.photoUrl"/>
+					<input name="file" type="file" ng-file-model="ctrl.photoUrlFile" />
+ 					<em>Image should not exceed 1500px in width and 2MB in size</em>
+		      </td>
+		    </tr>
+		    <!-- END photoUrl -->
+
+		</tbody>
+	</table>
+
+	<input class="brand-btn" name="submit" type="submit" value="Submit" />
+	<a class="cancel txt-dk-gray" ng-click="ctrl.cancel()" title="Cancel"><em>cancel</em></a>
+</form>

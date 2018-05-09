@@ -1,0 +1,55 @@
+<div class="header">
+	<h1>Help</h1>
+	<div class="clear"></div>
+</div>
+<form ng-submit="ctrl.save()">
+	<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!-- question -->
+			<tr>
+				<td class="txt-right">
+					<label for="question">Question:</label>
+				</td>
+				<td>
+			  		<input id="question" value="" maxlength="191" type="text" ng-model="ctrl.help.question" />
+				</td>
+			</tr>
+			<!-- END question -->
+
+			<!-- answer -->
+			<tr>
+				<td class="txt-right">
+		        	<label for="answer">Answer:</label>
+				</td>
+				<td>
+				  	<textarea id="answer" style="height:140px;" ng-model="ctrl.help.answer" ></textarea>
+				</td>
+		    </tr>
+			<!-- END answer -->
+
+		    <!-- photoUrl -->
+		    <tr>
+		      <td class="txt-right">
+		        <label for="photoUrl">Photo Url:</label>
+		      </td>
+		      <td>
+					<a ng-show="ctrl.help.photoUrl" ng-click="ctrl.removePhotoUrl()">remove</a><br/>
+					<img class="photoUrl" src="{{ctrl.help.photoUrl}}" ng-show="ctrl.help.photoUrl"/>
+					<input name="file" type="file" ng-file-model="ctrl.photoUrlFile" />
+		      </td>
+		    </tr>
+		    <!-- END photoUrl -->
+
+		</tbody>
+	</table>
+
+	<input class="brand-btn" name="submit" type="submit" value="Submit" />
+	<a class="cancel txt-dk-gray" ng-click="ctrl.cancel()" title="Cancel"><em>cancel</em></a>
+</form>

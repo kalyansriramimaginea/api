@@ -1,0 +1,20 @@
+<div class="login-wrapper">
+
+	<img class="appicon" src="/images/appicon.png">
+
+	<!-- LOGIN FORM -->
+	<form id="login" class="border-radius box-shadow brand-bg-light-color" ng-submit="ctrl.logIn()">
+		<p class="txt-center">Log in<br /><span><strong>Manage Admin</strong></span></p>
+		<div id="messageText" class="form_error txt-red txt-center">&nbsp;</div>
+		<label for="email">Username</label>
+		<input type="text" id="email" ng-model="ctrl.user.email" />
+		<br />
+		<label for="password">Password</label>
+    <input type="password" id="password" ng-model="ctrl.user.password" />
+		<br />
+    <button type="submit" class="brand-btn trans-bg-color brand-txt-main-color">Log in</button>
+		<div class="clear"></div>
+	</form>
+	<!-- END LOGIN FORM -->
+
+</div>

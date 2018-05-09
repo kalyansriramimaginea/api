@@ -1,0 +1,68 @@
+<div class="header">
+	<h1>Menu Slide</h1>
+	<div class="clear"></div>
+	<div class="txt-left" hideon="!ctrl.toggleInfo">
+		<p><b>Web:</b> http://#URL#<p>
+		<p><b>Breaking News:</b> dtop://inbox<p>
+		<p><b>Event:</b> dtop://event<p>
+		<p><b>Event Detail:</b> dtop://event/#EVENT_ID#<p>
+		<p><b>Explore:</b> dtop://event<p>
+		<p><b>Explore Detail:</b> dtop://event/#EVENT_ID#<p>
+		<p><b>Map:</b> dtop://map<p>
+		<p><b>Camera:</b> dtop://camera<p>
+		<p><b>Helps:</b> dtop://help<p>
+		<p><b>Helps:</b> dtop://help/#HELP_ID#<p>
+		<p><b>Sponsors:</b> dtop://sponsor<p>
+	</p>
+	<div class="clear"></div>
+</div>
+<form ng-submit="ctrl.save()">
+	<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!-- title -->
+			<tr>
+				<td class="txt-right">
+					<label for="title">Title:</label>
+				</td>
+				<td>
+			  		<input id="title" value="" maxlength="191" type="text" ng-model="ctrl.menuSlide.title" />
+				</td>
+			</tr>
+			<!-- END title -->
+
+			<!-- about -->
+			<tr>
+				<td class="txt-right">
+					<label for="about">About:</label>
+				</td>
+				<td>
+			  		<input id="about" value="" maxlength="191" type="text" ng-model="ctrl.menuSlide.about" />
+				</td>
+			</tr>
+			<!-- END about -->
+
+			<!-- url -->
+			<tr>
+				<td class="txt-right">
+					<label for="url">Url:</label>
+					<br/><a ng-click="ctrl.toggleInfo=!ctrl.toggleInfo">Show Routes</a>
+				</td>
+				<td>
+			  		<input id="url" value="" maxlength="191" type="text" ng-model="ctrl.menuSlide.url" />
+				</td>
+			</tr>
+			<!-- END url -->
+
+		</tbody>
+	</table>
+
+	<input class="brand-btn" name="submit" type="submit" value="Submit" />
+	<a class="cancel txt-dk-gray" ng-click="ctrl.cancel()" title="Cancel"><em>cancel</em></a>
+</form>

@@ -1,0 +1,135 @@
+<div class="header">
+	<h1>Vendor</h1>
+	<div class="clear"></div>
+</div>
+<form ng-submit="ctrl.save()">
+	<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!-- vendor_category -->
+			<tr>
+				<td class="txt-right">
+					<label for="vendorCategoryId">Vendor Category:</label>
+				</td>
+				<td>
+					<select id="vendorCategoryId" ng-change="ctrl.didChange()"
+											ng-model="ctrl.vendor.vendorCategoryId"
+											ng-options="vendorCategory.id as vendorCategory.name for vendorCategory in ctrl.vendorCategories"></select>
+				</td>
+			</tr>
+			<!-- END vendor_category -->
+
+			<!-- name -->
+			<tr>
+				<td class="txt-right">
+					<label for="name">Name:</label>
+				</td>
+				<td>
+			  		<input id="name" value="" maxlength="191" type="text" ng-model="ctrl.vendor.name" />
+				</td>
+			</tr>
+			<!-- END name -->
+
+		    <!-- photoUrl -->
+		    <tr>
+		      <td class="txt-right">
+		        <label for="photoUrl">Photo Url:</label>
+		      </td>
+		      <td>
+					<a ng-show="ctrl.vendor.photoUrl" ng-click="ctrl.removePhotoUrl()">remove</a><br/>
+					<img class="photoUrl" src="{{ctrl.vendor.photoUrl}}" ng-show="ctrl.vendor.photoUrl"/>
+					<input name="file" type="file" ng-file-model="ctrl.photoUrlFile" />
+				    <em>Image should not exceed 1500px in width and 2MB in size</em>
+		      </td>
+		    </tr>
+		    <!-- END photoUrl -->
+
+			<!-- about -->
+			<tr>
+				<td class="txt-right">
+		        	<label for="about">About:</label>
+				</td>
+				<td>
+				  	<textarea id="about" style="height:140px;" ng-model="ctrl.vendor.about" ></textarea>
+				</td>
+		    </tr>
+			<!-- END about -->
+
+			<!-- siteUrl -->
+			<tr>
+				<td class="txt-right">
+					<label for="siteUrl">Site Url:</label>
+				</td>
+				<td>
+			  		<input id="siteUrl" value="" maxlength="191" type="text" ng-model="ctrl.vendor.siteUrl" />
+				</td>
+			</tr>
+			<!-- END siteUrl -->
+
+			<!-- fbUrl -->
+			<tr>
+				<td class="txt-right">
+					<label for="fbUrl">Fb Url:</label>
+				</td>
+				<td>
+			  		<input id="fbUrl" value="" maxlength="191" type="text" ng-model="ctrl.vendor.fbUrl" />
+				</td>
+			</tr>
+			<!-- END fbUrl -->
+
+			<!-- twUrl -->
+			<tr>
+				<td class="txt-right">
+					<label for="twUrl">Tw Url:</label>
+				</td>
+				<td>
+			  		<input id="twUrl" value="" maxlength="191" type="text" ng-model="ctrl.vendor.twUrl" />
+				</td>
+			</tr>
+			<!-- END twUrl -->
+
+			<!-- inUrl -->
+			<tr>
+				<td class="txt-right">
+					<label for="inUrl">In Url:</label>
+				</td>
+				<td>
+			  		<input id="inUrl" value="" maxlength="191" type="text" ng-model="ctrl.vendor.inUrl" />
+				</td>
+			</tr>
+			<!-- END inUrl -->
+
+			<!-- lat -->
+			<tr>
+				<td class="txt-right">
+					<label for="lat">Lat:<br/>http://www.latlong.net/</label>
+				</td>
+				<td>
+			  		<input id="lat" value="" maxlength="191" type="text" ng-model="ctrl.vendor.lat" />
+				</td>
+			</tr>
+			<!-- END lat -->
+
+			<!-- lon -->
+			<tr>
+				<td class="txt-right">
+					<label for="lon">Lon:<br/>http://www.latlong.net/</label>
+				</td>
+				<td>
+			  		<input id="lon" value="" maxlength="191" type="text" ng-model="ctrl.vendor.lon" />
+				</td>
+			</tr>
+			<!-- END lon -->
+
+		</tbody>
+	</table>
+
+	<input class="brand-btn" name="submit" type="submit" value="Submit" />
+	<a class="cancel txt-dk-gray" ng-click="ctrl.cancel()" title="Cancel"><em>cancel</em></a>
+</form>

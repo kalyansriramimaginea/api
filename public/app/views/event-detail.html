@@ -1,0 +1,168 @@
+<div class="header">
+	<h1>Event</h1>
+	<div class="clear"></div>
+</div>
+<form ng-submit="ctrl.save()">
+	<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!-- name -->
+			<tr>
+				<td class="txt-right">
+					<label for="name">Name:</label>
+				</td>
+				<td>
+			  		<input id="name" value="" maxlength="191" type="text" ng-model="ctrl.event.name" />
+				</td>
+			</tr>
+			<!-- END name -->
+
+			<!-- event_category -->
+			<tr>
+				<td class="txt-right">
+					<label for="eventCategoryId">Event Category:</label>
+				</td>
+				<td>
+					<select id="eventCategoryId" ng-change="ctrl.didChange()"
+											ng-model="ctrl.event.eventCategoryId"
+											ng-options="eventCategory.id as eventCategory.name for eventCategory in ctrl.eventCategories"></select>
+				</td>
+			</tr>
+			<!-- END event_category -->
+
+			<!-- name -->
+			<tr>
+				<td class="txt-right">
+					<label for="venue">Venue:</label>
+				</td>
+				<td>
+					<input id="venue" value="" maxlength="191" type="text" ng-model="ctrl.event.venue" />
+				</td>
+			</tr>
+			<!-- END name -->
+
+		    <!-- photoUrl -->
+		    <tr>
+		      <td class="txt-right">
+		        <label for="photoUrl">Photo Url:</label>
+		      </td>
+		      <td>
+					<a ng-show="ctrl.event.photoUrl" ng-click="ctrl.removePhotoUrl()">remove</a><br/>
+					<img class="photoUrl" src="{{ctrl.event.photoUrl}}" ng-show="ctrl.event.photoUrl"/>
+					<input name="file" type="file" ng-file-model="ctrl.photoUrlFile" />
+				  	<em>Image should not exceed 1500px in width and 2MB in size</em>
+		      </td>
+		    </tr>
+		    <!-- END photoUrl -->
+
+			<!-- about -->
+			<tr>
+				<td class="txt-right">
+					<label for="about">About:</label>
+				</td>
+				<td>
+					<textarea id="about" style="height:140px;" ng-model="ctrl.event.about" ></textarea>
+				</td>
+			</tr>
+			<!-- END about -->
+
+			<!-- address -->
+			<tr>
+				<td class="txt-right">
+					<label for="address">Address:</label>
+				</td>
+				<td>
+					<textarea id="address" style="height:140px;" ng-model="ctrl.event.address" ></textarea>
+				</td>
+			</tr>
+			<!-- END address -->
+
+			<!-- fbUrl -->
+			<tr>
+				<td class="txt-right">
+		        	<label for="fbUrl">Fb Url:</label>
+				</td>
+				<td>
+					<input id="fbUrl" value="" maxlength="191" type="text" ng-model="ctrl.event.fbUrl" />
+				</td>
+		    </tr>
+			<!-- END fbUrl -->
+
+			<!-- twUrl -->
+			<tr>
+				<td class="txt-right">
+		        	<label for="twUrl">Tw Url:</label>
+				</td>
+				<td>
+					<input id="twUrl" value="" maxlength="191" type="text" ng-model="ctrl.event.twUrl" />
+				</td>
+		    </tr>
+			<!-- END twUrl -->
+
+			<!-- inUrl -->
+			<tr>
+				<td class="txt-right">
+		        	<label for="inUrl">In Url:</label>
+				</td>
+				<td>
+					<input id="inUrl" value="" maxlength="191" type="text" ng-model="ctrl.event.inUrl" />
+				</td>
+		    </tr>
+			<!-- END twUrl -->
+
+			<!-- siteUrl -->
+			<tr>
+				<td class="txt-right">
+					<label for="siteUrl">Site Url:</label>
+				</td>
+				<td>
+			  		<input id="siteUrl" value="" maxlength="191" type="text" ng-model="ctrl.event.siteUrl" />
+				</td>
+			</tr>
+			<!-- END siteUrl -->
+
+			<!-- startAt -->
+			<tr class="startAt">
+				<td class="txt-right">
+					<label>Start At:</label>
+				</td>
+			    <td>
+			    	<input datetime-picker ng-model="ctrl.startAt" date-format="M/dd/yyyy hh:mm a" />
+			    </td>
+			</tr>
+			<!-- END startAt -->
+
+			<!-- endAt -->
+			<tr class="startAt">
+				<td class="txt-right">
+					<label>End At:</label>
+				</td>
+			    <td>
+			    	<input datetime-picker ng-model="ctrl.endAt" date-format="M/dd/yyyy hh:mm a" />
+			    </td>
+			</tr>
+			<!-- END endAt -->
+
+			<!-- allDay -->
+			<tr>
+				<td class="txt-right">
+					<label for="allDay">All Day:</label>
+				</td>
+			    <td>
+			    	<input id="display" type="checkbox" ng-model="ctrl.event.allDay" ng-true-value="1" ng-false-value="0" />
+			    </td>
+			</tr>
+			<!-- END allDay -->
+
+		</tbody>
+	</table>
+
+	<input class="brand-btn" name="submit" type="submit" value="Submit" />
+	<a class="cancel txt-dk-gray" ng-click="ctrl.cancel()" title="Cancel"><em>cancel</em></a>
+</form>
