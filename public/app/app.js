@@ -117,10 +117,10 @@
 
   	// VARIABLES
   	app.value('config', {
-    	baseURL: 			'https://dtop.festeng.com',
+    	baseURL: 			'https://c1whistler.festeng.com',
 		bucket: 			'files.festivalengine.co',
 		cdnBaseURL:			'http://files.festivalengine.co',
-		appBucket:			'dtop',
+		appBucket:			'c1whistler',
 		fileSizeLimit: 		3000000
   	});
 

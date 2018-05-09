@@ -122,7 +122,7 @@ class ImportTools
 
         switch ($type) {
             default:
-                return 'dtop/' . $userId . '/'. $type . '/' . $id . '/';
+                return 'c1whistler/' . $userId . '/'. $type . '/' . $id . '/';
         }
     }
 
