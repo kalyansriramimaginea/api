@@ -87,26 +87,6 @@
                 controller		: 'eventCategoryDetailController',
                 controllerAs	: 'ctrl'
             })
-            .when('/vendor_category', {
-                templateUrl		: '/app/views/vendor-category.html',
-                controller		: 'vendorCategoryController',
-                controllerAs	: 'ctrl'
-            })
-            .when('/vendor_category/:id', {
-                templateUrl		: '/app/views/vendor-category-detail.html',
-                controller		: 'vendorCategoryDetailController',
-                controllerAs	: 'ctrl'
-            })
-            .when('/vendor', {
-                templateUrl		: '/app/views/vendor.html',
-                controller		: 'vendorController',
-                controllerAs	: 'ctrl'
-            })
-            .when('/vendor/:id', {
-                templateUrl		: '/app/views/vendor-detail.html',
-                controller		: 'vendorDetailController',
-                controllerAs	: 'ctrl'
-            })
             .otherwise({
                 redirectTo: '/admin/dashboard'
             });

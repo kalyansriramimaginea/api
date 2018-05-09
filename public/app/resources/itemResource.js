@@ -122,9 +122,9 @@
     app.factory('menuSlideResource', itemResource);
     app.factory('sponsorResource', itemResource);
     app.factory('tierResource', itemResource);
-    app.factory('vendorResource', itemResource);
+    //app.factory('vendorResource', itemResource);
     app.factory('eventResource', itemResource);
-    app.factory('vendorCategoryResource', itemResource);
+    //app.factory('vendorCategoryResource', itemResource);
     app.factory('eventCategoryResource', itemResource);
 
 }())
