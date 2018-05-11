@@ -56,20 +56,20 @@ class ApiMessageController extends Controller {
 
 		if (!$request->has("id") && $request->push == 1) {
 
-			//$object->uaId = UA::update("", $request, false);
+			$object->uaId = UA::update("", $request, false);
 
 		} else if ($object->uaId != "") {
 
 			if ($request->push == 0) {
-				//UA::delete($object->uaId, $originalSendAt);
+				UA::delete($object->uaId, $originalSendAt);
 			  	$object->uaId = "";
 			} else {
-				//$object->uaId = UA::update($object->uaId, $request, false);
+				$object->uaId = UA::update($object->uaId, $request, false);
 			}
 
 		} else {
 			if ($request->kind != "push") {
-				//$object->uaId = UA::update("", $request, true);
+				$object->uaId = UA::update("", $request, true);
 			}
 		}
         $object->save();
