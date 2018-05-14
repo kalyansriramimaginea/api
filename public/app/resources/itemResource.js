@@ -123,6 +123,7 @@
     app.factory('sponsorResource', itemResource);
     app.factory('tierResource', itemResource);
     app.factory('vendorResource', itemResource);
+    app.factory('mapResource', itemResource);
     app.factory('eventResource', itemResource);
     app.factory('vendorCategoryResource', itemResource);
     app.factory('eventCategoryResource', itemResource);

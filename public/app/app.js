@@ -107,6 +107,16 @@
                 controller		: 'vendorDetailController',
                 controllerAs	: 'ctrl'
             })
+            .when('/map', {
+                templateUrl		: '/app/views/map.html',
+                controller		: 'mapController',
+                controllerAs	: 'ctrl'
+            })
+            .when('/map/:id', {
+                templateUrl		: '/app/views/map-detail.html',
+                controller		: 'mapDetailController',
+                controllerAs	: 'ctrl'
+            })
             .otherwise({
                 redirectTo: '/admin/dashboard'
             });

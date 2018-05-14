@@ -1,0 +1,29 @@
+<div class="header">
+    <h1>Maps</h1>
+
+    <!-- A PLACE FOR ERRORS -->
+    <div class="messageText" id="messageText"></div>
+
+    <div ng-hide="editing" class="action_btns">
+        <a class="btn icon brand-btn add" ng-click="ctrl.create()">Add Map</a>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>
+<table ng-init="ctrl.load()">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>&nbsp;</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-show="!ctrl.maps.length"><td colspan="2">There are currently no records to list</td></tr>
+    <tr ng-repeat="item in ctrl.maps" id="{{ item.id }}">
+        <td>
+            <div title="{{ item.name }}"><span>{{ item.name }}</span></div>
+        </td>
+        <td class="table_action_items" style="width:144px;"><a ng-click="ctrl.delete(item)" class="delete" title="Delete">X</a><a ng-click="ctrl.edit(item)" title="Edit Item">Edit</a></td>
+    </tr>
+    </tbody>
+</table>

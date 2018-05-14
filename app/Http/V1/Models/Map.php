@@ -11,7 +11,7 @@ class Map extends Eloquent {
 
  	protected $connection = 'mongodb';
 
- 	protected $fillable = ['name', 'photoUrl', 'lat', 'lon', 'zoom', 'sortOrder'];
+ 	protected $fillable = ['name', 'photoUrl', 'sortOrder'];
     protected $dates = ['deleted_at'];
 
 	protected $casts = [
@@ -31,9 +31,6 @@ class Map extends Eloquent {
 		return [
 			'name' => $this->name,
 			'photoUrl' => $this->photoUrl,
-			'lat' => $this->lat,
-			'lon' => $this->lon,
-			'zoom' => (int)$this->zoom,
 			'sortOrder' => (int)$this->sortOrder
 		];
 	}
