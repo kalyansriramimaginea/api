@@ -96,7 +96,9 @@
 	<script src="/app/controllers/sponsorDetailController.js" defer="defer"></script>
     <script src="/app/controllers/tierController.js" defer="defer"></script>
 	<script src="/app/controllers/tierDetailController.js" defer="defer"></script>
-    <script src="/app/controllers/vendorController.js" defer="defer"></script>
+	<script src="/app/controllers/vendorController.js" defer="defer"></script>
+	<script src="/app/controllers/mapController.js" defer="defer"></script>
+	<script src="/app/controllers/mapDetailController.js" defer="defer"></script>
 	<script src="/app/controllers/vendorDetailController.js" defer="defer"></script>
 	<script src="/app/controllers/vendorCategoryController.js" defer="defer"></script>
 	<script src="/app/controllers/vendorCategoryDetailController.js" defer="defer"></script>
