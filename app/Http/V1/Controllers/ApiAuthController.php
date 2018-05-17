@@ -186,13 +186,20 @@ class ApiAuthController extends Controller {
 
     public function getUsername() {
 
-      $user = $this->getAuthUser();
+        $user = $this->getAuthUser();
 
-      $username = $this->createUsername();
-      $user->username = $username;
-      $user->save();
+        $username = $this->createUsername();
+        $user->username = $username;
+        $user->save();
 
-      return response()->json(compact('username'));
+        return response()->json(compact('username'));
+
+    }
+    public function getEmail() {
+
+        $user = $this->getAuthUser();
+
+        return response()->json(compact('username'));
 
     }
 
