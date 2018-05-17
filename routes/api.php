@@ -37,6 +37,7 @@ $api->version('v1', ['middleware' => 'api', 'namespace' => 'App\Http\V1\Controll
 
 		// PERSONAL
 		$api->get('users/me', 'ApiAuthController@getUser');
+        $api->get('users/email', 'ApiAuthController@getEmail');
 		$api->post('users/logout', 'ApiAuthController@logout');
 
 		$api->group(['middleware' => ['personaletag']], function ($api) {
