@@ -48,7 +48,7 @@ class ApiAuthController extends Controller {
 
 			$password = Config::get('api.defaultPassword');
 
-			//$user->anonymousId = $user->anonymousId;
+			$user->anonymousId = $user->anonymousId;
             $user->name = $request->name;
             $user->email = $request->email;
 			$user->password = bcrypt($password);
