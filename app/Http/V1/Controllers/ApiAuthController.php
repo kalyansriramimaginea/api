@@ -179,9 +179,8 @@ class ApiAuthController extends Controller {
 	        return response()->json(['token_invalid'], $e->getStatusCode());
 	    } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
             return response()->json(['token_absent'], $e->getStatusCode());
-        } catch (\Exception $e) {
-            return response()->json(['token_bad'], $e->getMessage());
         }
+        var_dump($user);
 
 	    return response()->json(compact('user'));
 	}
