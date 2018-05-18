@@ -57,7 +57,7 @@ class ApiAuthController extends Controller {
 			$credentials = ['email' => $request->email, 'password' => $password];
 
           } else {
-  			return response()->json(['error' => 'Could not create user. Please try again.'], 500);
+  			return response()->json(['error' => 'Could not create user. Please try again.'], 502);
   		  }
 
 		// NORMAL REGISTER
@@ -74,7 +74,7 @@ class ApiAuthController extends Controller {
 			$credentials = ['email' => $request->email, 'password' => $request->password];
 
 		} else {
-			return response()->json(['error' => 'Could not create user. Please try again.'], 500);
+			return response()->json(['error' => 'Could not create user. Please try again.'], 503);
 		}
 
 		try {
