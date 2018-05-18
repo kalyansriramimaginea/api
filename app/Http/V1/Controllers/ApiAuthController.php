@@ -53,7 +53,7 @@ class ApiAuthController extends Controller {
             $user->receiveNews = $request->receiveNews;
 			$user->accountCreated = true;
 
-              var_dump($user);
+              var_dump($request->email);
               exit();
             $user->save();
 
