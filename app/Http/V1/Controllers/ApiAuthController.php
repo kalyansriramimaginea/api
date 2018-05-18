@@ -207,6 +207,17 @@ class ApiAuthController extends Controller {
         return response()->json(compact('email'));
 
     }
+    public function resetEmail() {
+
+        $user = $this->getAuthUser();
+
+        $user->email = "";
+        $email = "";
+        $user->save();
+
+        return response()->json(compact('email'));
+
+    }
 
     function createUsername() {
 
