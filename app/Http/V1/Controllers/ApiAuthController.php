@@ -202,7 +202,9 @@ class ApiAuthController extends Controller {
     public function getEmail() {
 
         $user = $this->getAuthUser();
-        return response()->json(compact('user'));
+        $email = $user->email;
+
+        return response()->json(compact('email'));
 
     }
 
