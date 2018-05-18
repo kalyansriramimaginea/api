@@ -198,6 +198,7 @@ class ApiAuthController extends Controller {
     public function getEmail() {
 
         $user = $this->getAuthUser();
+        var_dump($user);
 
         return response()->json(compact('username'));
 
