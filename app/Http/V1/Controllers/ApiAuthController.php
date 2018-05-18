@@ -170,7 +170,7 @@ class ApiAuthController extends Controller {
 	public function getUser() {
 
 	    try {
-            $user = JWTAuth::parseToken()->authenticate()
+            $user = JWTAuth::parseToken()->authenticate();
             var_dump($user);
 	        if (! $user) {
 	            return response()->json(['user_not_found'], 404);
