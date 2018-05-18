@@ -170,9 +170,7 @@ class ApiAuthController extends Controller {
 	public function getUser() {
 
 	    try {
-            $user = JWTAuth::parseToken()->authenticate();
-            var_dump($user);
-	        if (! $user) {
+	        if (! $user = JWTAuth::parseToken()->authenticate()) {
 	            return response()->json(['user_not_found'], 404);
 	        }
 	    } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
@@ -180,8 +178,10 @@ class ApiAuthController extends Controller {
 	    } catch (Tymon\JWTAuth\Exceptions\TokenInvalidException $e) {
 	        return response()->json(['token_invalid'], $e->getStatusCode());
 	    } catch (Tymon\JWTAuth\Exceptions\JWTException $e) {
-	        return response()->json(['token_absent'], $e->getStatusCode());
-	    }
+            return response()->json(['token_absent'], $e->getStatusCode());
+        } catch (\Exception $e) {
+            return response()->json(['token_bad'], $e->getMessage());
+        }
 
 	    return response()->json(compact('user'));
 	}
