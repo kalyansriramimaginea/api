@@ -204,6 +204,7 @@ class ApiAuthController extends Controller {
         var_dump('TEST');
         var_dump($user->_id);
 
+        exit();
         return response()->json(compact('username'));
 
     }
