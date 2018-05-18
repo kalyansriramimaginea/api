@@ -106,7 +106,7 @@ class ApiAuthController extends Controller {
 			$user->anonymousId = $request->anonymousId;
 			$user->name = 'Anonymous';
 			$user->username = $username;
-			$user->email = "";
+			$user->email = $request->anonymousId;
 			$user->password = bcrypt($password);
             $user->receiveNews = false;
 			$user->accountCreated = false;
