@@ -40,13 +40,15 @@ class ApiAuthController extends Controller {
 
           $user = $this->getAuthUser();
 
+          var_dump($user);
+          exit();
           if ($user->anonymousId == $request->anonymousId &&
 		  	  $request->email != Config::get('api.admin') &&
 			  $request->email != '') {
 
 			$password = Config::get('api.defaultPassword');
 
-			$user->anonymousId = $user->anonymousId;
+			//$user->anonymousId = $user->anonymousId;
             $user->name = $request->name;
             $user->email = $request->email;
 			$user->password = bcrypt($password);
