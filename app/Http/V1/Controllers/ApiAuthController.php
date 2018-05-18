@@ -202,10 +202,10 @@ class ApiAuthController extends Controller {
 
         $user = $this->getAuthUser();
         var_dump('TEST');
-        var_dump(compact('username'));
+        var_dump(compact('user'));
 
         exit();
-        return response()->json(compact('username'));
+        return response()->json(compact('user'));
 
     }
 
