@@ -174,6 +174,7 @@ class ApiAuthController extends Controller {
 	            return response()->json(['user_not_found'], 404);
 	        } else {
 
+                var_dump('TEST');
                 var_dump($user->_id);
             }
 	    } catch (Tymon\JWTAuth\Exceptions\TokenExpiredException $e) {
