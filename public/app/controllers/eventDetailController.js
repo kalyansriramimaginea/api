@@ -6,7 +6,7 @@
 
         var ctrl = this;
 		ctrl.startAt = moment().format('M/DD/YYYY h:mm A');
-        ctrl.event = {"name": "", "eventCategoryId": "", "photoUrl": "", "about": "", "fbUrl": "", "twUrl": "", "inUrl": "", "siteUrl": "", "startAt": 0, "endAt": 0, "sponsorPhotoUrl" : "", "allDay": 0};
+        ctrl.event = {"name": "", "eventCategoryId": "", "photoUrl": "", "about": "", "fbUrl": "", "twUrl": "", "inUrl": "", "siteUrl": "", "startAt": 0, "endAt": 0, "sponsorPhotoUrl": "", "allDay": 0};
 
 
 		eventCategoryResource.getItems('event_category').then(function() {
