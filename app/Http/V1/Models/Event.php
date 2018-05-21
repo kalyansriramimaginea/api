@@ -34,7 +34,7 @@ class Event extends Eloquent {
 			'eventCategoryId' => $this->eventCategoryId,
             'venue' => $this->venue,
 			'photoUrl' => $this->photoUrl,
-			'sponsorPhotoUrl' =? $this->sponsorPhotoUrl,
+			'sponsorPhotoUrl' => $this->sponsorPhotoUrl,
             'about' => $this->about,
             'address' => $this->address,
 			'fbUrl' => $this->fbUrl,
