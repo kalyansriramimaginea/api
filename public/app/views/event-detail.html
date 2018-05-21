@@ -160,6 +160,20 @@
 			</tr>
 			<!-- END allDay -->
 
+			<!-- sponsorPhotoUrl -->
+			<tr>
+				<td class="txt-right">
+					<label for="sponsorPhotoUrl">Sponsor Photo Url:</label>
+				</td>
+				<td>
+				<a ng-show="ctrl.event.sponsorPhotoUrl" ng-click="ctrl.removeSponsorPhotoUrl()">remove</a><br/>
+				<img class="sponsorPhotoUrl" src="{{ctrl.event.sponsorPhotoUrl}}" ng-show="ctrl.event.sponsorPhotoUrl"/>
+				<input name="file" type="file" ng-file-model="ctrl.sponsorPhotoUrlFile" />
+					<em>Image should not exceed 1500px in width and 2MB in size</em>
+				</td>
+			</tr>
+			<!-- END photoUrl -->
+
 		</tbody>
 	</table>
 
