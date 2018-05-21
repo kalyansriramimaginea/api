@@ -6,7 +6,7 @@
 
         var ctrl = this;
 		ctrl.startAt = moment().format('M/DD/YYYY h:mm A');
-        ctrl.event = {"name": "", "eventCategoryId": "", "photoUrl": "", "about": "", "fbUrl": "", "twUrl": "", "inUrl": "", "siteUrl": "", "startAt": 0, "endAt": 0, "allDay": 0};
+        ctrl.event = {"name": "", "eventCategoryId": "", "photoUrl": "", "about": "", "fbUrl": "", "twUrl": "", "inUrl": "", "siteUrl": "", "startAt": 0, "endAt": 0, "sponsorPhotoUrl" : "", "allDay": 0};
 
 
 		eventCategoryResource.getItems('event_category').then(function() {
@@ -26,16 +26,17 @@
         ctrl.save = function(){
 
 			imageResource.upload(ctrl.photoUrlFile, function(fileName) {
-                if (fileName != "") {
-                    ctrl.event.photoUrl = fileName;
-                }
-
-				ctrl.event.startAt = moment(ctrl.startAt).format('X');
-                ctrl.event.endAt = moment(ctrl.endAt).format('X');
-				eventResource.saveItem('event', ctrl.event).then(function() {
-					$location.path('/event');
-				});
-			});
+        if (fileName != "") {
+    			ctrl.event.photoUrl = fileName;
+        }
+        imageResource.upload(ctrl.sponsorPhotoUrlFile, function(sponsorFileName) {
+          if(sponsorFileName != "") {
+            ctrl.event.sponsorPhotoUrl = sponsorFileName;
+          }
+          ctrl.event.startAt = moment(ctrl.startAt).format('X'); ctrl.event.endAt =
+  				moment(ctrl.endAt).format('X'); eventResource.saveItem('event',
+  				ctrl.event).then(function() { $location.path('/event'); }); });
+        });
 
     	};
 
@@ -47,6 +48,9 @@
         	ctrl.event.photoUrl = "";
 	        eventResource.saveItem('/event', ctrl.event);
 	    };
+      ctrl.removeSponsorPhotoUrl = function() {
+        ctrl.event.sponsorPhotoUrl = "";
+      }
 
 	}
 
