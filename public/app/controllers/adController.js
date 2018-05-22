@@ -45,4 +45,4 @@
 	app.controller('adController', adController);
 
 }())
-x
+
