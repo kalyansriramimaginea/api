@@ -27,15 +27,18 @@
 
 			imageResource.upload(ctrl.photoUrlFile, function(fileName) {
         if (fileName != "") {
+          console.log("Uploading image at " + fileName);
     			ctrl.event.photoUrl = fileName;
         }
+        console.log("Attempting to upload " + ctrl.sponsorPhotoUrlFile)
         imageResource.upload(ctrl.sponsorPhotoUrlFile, function(sponsorFileName) {
           if(sponsorFileName != "") {
+            console.log("Uploading image at " + sponsorFileName);
             ctrl.event.sponsorPhotoUrl = sponsorFileName;
           }
-          ctrl.event.startAt = moment(ctrl.startAt).format('X'); ctrl.event.endAt =
-  				moment(ctrl.endAt).format('X'); eventResource.saveItem('event',
-  				ctrl.event).then(function() { $location.path('/event'); }); });
+          ctrl.event.startAt = moment(ctrl.startAt).format('X');
+          ctrl.event.endAt = moment(ctrl.endAt).format('X');
+          eventResource.saveItem('event', ctrl.event).then(function() { $location.path('/event'); }); });
         });
 
     	};
