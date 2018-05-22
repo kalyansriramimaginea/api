@@ -118,7 +118,7 @@
 
     app.factory('messageResource', itemResource);
     app.factory('messageTypeResource', itemResource);
-    app.factory('adResource', adResource);
+    app.factory('adResource', itemResource);
     app.factory('helpResource', itemResource);
     app.factory('menuSlideResource', itemResource);
     app.factory('sponsorResource', itemResource);
