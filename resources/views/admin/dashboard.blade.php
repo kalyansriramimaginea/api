@@ -83,12 +83,12 @@
 	<script src="/app/controllers/messageController.js" defer="defer"></script>
 	<script src="/app/controllers/messageDetailController.js" defer="defer"></script>
 	<script src="/app/controllers/messagePushController.js" defer="defer"></script>
+	<script src="/app/controllers/adController.js" defer="defer"></script>
 	<script src="/app/resources/imageResource.js" defer="defer"></script>
 	<script src="/app/resources/itemResource.js" defer="defer"></script>
 
     <script src="/app/controllers/eventController.js" defer="defer"></script>
 	<script src="/app/controllers/eventDetailController.js" defer="defer"></script>
-	<script src="/app/controllers/adController.js" defer="defer"></script>
 	<script src="/app/controllers/adDetailController.js" defer="defer"></script>
     <script src="/app/controllers/helpController.js" defer="defer"></script>
 	<script src="/app/controllers/helpDetailController.js" defer="defer"></script>
