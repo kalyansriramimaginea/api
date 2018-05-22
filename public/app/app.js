@@ -127,6 +127,16 @@
                 controller		: 'mapDetailController',
                 controllerAs	: 'ctrl'
             })
+            .when('/ad', {
+                templateUrl		: '/app/views/ad.html',
+                controller		: 'adController',
+                controllerAs	: 'ctrl'
+            })
+            .when('/ad/:id', {
+                templateUrl		: '/app/views/ad-detail.html',
+                controller		: 'adDetailController',
+                controllerAs	: 'ctrl'
+            })
             .otherwise({
                 redirectTo: '/admin/dashboard'
             });
