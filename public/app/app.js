@@ -12,6 +12,16 @@
                 controller		: 'dashboardController',
                 controllerAs	: 'ctrl'
             })
+						.when('/ad', {
+							templateUrl : '/app/view/ad.html',
+							controller : 'adController',
+							controllerAs : 'ctrl'
+						})
+						.when('/ad/:id', {
+                templateUrl		: '/app/views/ad-detail.html',
+                controller		: 'adDetailController',
+                controllerAs	: 'ctrl'
+            })
             .when('/message', {
                 templateUrl		: '/app/views/message.html',
                 controller		: 'messageController',

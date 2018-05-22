@@ -1,0 +1,55 @@
+<div class="header">
+	<h1>Ad</h1>
+	<div class="clear"></div>
+</div>
+<form ng-submit="ctrl.save()">
+	<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			<!-- name -->
+			<tr>
+				<td class="txt-right">
+					<label for="name">Name:</label>
+				</td>
+				<td>
+			  		<input id="name" value="" maxlength="191" type="text" ng-model="ctrl.ad.name" />
+				</td>
+			</tr>
+			<!-- END name -->
+
+			<!-- url -->
+			<tr>
+				<td class="txt-right">
+		        	<label for="url">Url:</label>
+				</td>
+				<td>
+				  	<textarea id="url" style="height:140px;" ng-model="ctrl.ad.url" ></textarea>
+				</td>
+		    </tr>
+			<!-- END url -->
+
+		    <!-- photoUrl -->
+		    <tr>
+		      <td class="txt-right">
+		        <label for="photoUrl">Photo Url:</label>
+		      </td>
+		      <td>
+					<a ng-show="ctrl.ad.photoUrl" ng-click="ctrl.removePhotoUrl()">remove</a><br/>
+					<img class="photoUrl" src="{{ctrl.ad.photoUrl}}" ng-show="ctrl.ad.photoUrl"/>
+					<input name="file" type="file" ng-file-model="ctrl.photoUrlFile" />
+		      </td>
+		    </tr>
+		    <!-- END photoUrl -->
+
+		</tbody>
+	</table>
+
+	<input class="brand-btn" name="submit" type="submit" value="Submit" />
+	<a class="cancel txt-dk-gray" ng-click="ctrl.cancel()" title="Cancel"><em>cancel</em></a>
+</form>

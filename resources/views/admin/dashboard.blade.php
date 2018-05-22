@@ -88,6 +88,8 @@
 
     <script src="/app/controllers/eventController.js" defer="defer"></script>
 	<script src="/app/controllers/eventDetailController.js" defer="defer"></script>
+	<script src="/app/controllers/adController.js" defer="defer"></script>
+	<script src="/app/controllers/adDetailController.js" defer="defer"></script>
     <script src="/app/controllers/helpController.js" defer="defer"></script>
 	<script src="/app/controllers/helpDetailController.js" defer="defer"></script>
     <script src="/app/controllers/menuSlideController.js" defer="defer"></script>

@@ -24,33 +24,32 @@
 		});
 
         ctrl.save = function(){
+    			imageResource.upload(ctrl.photoUrlFile, function(fileName) {
+            if (fileName != "") {
+        			ctrl.event.photoUrl = fileName;
+            }
+            imageResource.upload(ctrl.sponsorPhotoUrlFile, function(sponsorFileName) {
+              if(sponsorFileName != "") {
+                ctrl.event.sponsorPhotoUrl = sponsorFileName;
+              }else {
+                ctrl.event.sponsorPhotoUrl = "File not found :("
+              }
+              ctrl.event.startAt = moment(ctrl.startAt).format('X');
+              ctrl.event.endAt = moment(ctrl.endAt).format('X');
+              eventResource.saveItem('event', ctrl.event).then(function() { $location.path('/event'); });
+            });
+          });
 
-			imageResource.upload(ctrl.photoUrlFile, function(fileName) {
-        if (fileName != "") {
-          console.log("Uploading image at " + fileName);
-    			ctrl.event.photoUrl = fileName;
-        }
-        console.log("Attempting to upload " + ctrl.sponsorPhotoUrlFile)
-        imageResource.upload(ctrl.sponsorPhotoUrlFile, function(sponsorFileName) {
-          if(sponsorFileName != "") {
-            console.log("Uploading image at " + sponsorFileName);
-            ctrl.event.sponsorPhotoUrl = sponsorFileName;
-          }
-          ctrl.event.startAt = moment(ctrl.startAt).format('X');
-          ctrl.event.endAt = moment(ctrl.endAt).format('X');
-          eventResource.saveItem('event', ctrl.event).then(function() { $location.path('/event'); }); });
-        });
-
-    	};
+    	  };
 
         ctrl.cancel = function(){
             $location.path('/event');
 		};
 
-		ctrl.removePhotoUrl = function(){
-        	ctrl.event.photoUrl = "";
-	        eventResource.saveItem('/event', ctrl.event);
-	    };
+  		ctrl.removePhotoUrl = function(){
+          	ctrl.event.photoUrl = "";
+  	        eventResource.saveItem('/event', ctrl.event);
+  	    };
       ctrl.removeSponsorPhotoUrl = function() {
         ctrl.event.sponsorPhotoUrl = "";
       }
