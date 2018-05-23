@@ -50,11 +50,11 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 		return 'U';
 	}
 
-  	// public static function rules() {
-		// return [
-		// 	'email' => 'sparse'
-    //   	];
-  	// }
+  	public static function rules() {
+		return [
+			'email' => 'unique'
+      	];
+  	}
 
 	public function getJWTIdentifier()
 	{

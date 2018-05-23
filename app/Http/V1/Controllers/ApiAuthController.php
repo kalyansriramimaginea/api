@@ -210,9 +210,9 @@ class ApiAuthController extends Controller {
     public function resetEmail() {
 
         $user = $this->getAuthUser();
-
-        $user->email = null;
-        $email = null;
+				$curTime = time();
+        $user->email = "NULL@EMAIL+" + curTime;
+        $email = "NULL@EMAIL+"+ curTime;
         $user->save();
 
         return response()->json(compact('email'));
