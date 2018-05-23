@@ -43,7 +43,8 @@
 					<a ng-show="ctrl.ad.photoUrl" ng-click="ctrl.removePhotoUrl()">remove</a><br/>
 					<img class="photoUrl" src="{{ctrl.ad.photoUrl}}" ng-show="ctrl.ad.photoUrl"/>
 					<input name="file" type="file" ng-file-model="ctrl.photoUrlFile" />
-					<p>Leave "Photo Url" empty to disable the ad</p>
+					<em>Image should not exceed 1500px in width and 2MB in size</em><br>
+					<em>Leave "Photo Url" empty to disable the ad</em>
 		      </td>
 		    </tr>
 		    <!-- END photoUrl -->
