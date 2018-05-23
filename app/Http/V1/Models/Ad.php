@@ -25,8 +25,6 @@ class Ad extends Eloquent {
   	public static function rules() {
 		return [
 			'name' => 'required',
-			'photoUrl' => 'required',
-      'url' => 'required'
       	];
   	}
 

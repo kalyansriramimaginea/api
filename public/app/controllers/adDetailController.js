@@ -38,7 +38,7 @@
 
 		ctrl.removePhotoUrl = function(){
         	ctrl.ad.photoUrl = "";
-	        adResource.saveItem('/ad', ctrl.ad);
+	        adResource.saveItem('ad', ctrl.ad);
 	    };
 
 	}
