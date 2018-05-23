@@ -31,8 +31,6 @@
             imageResource.upload(ctrl.sponsorPhotoUrlFile, function(sponsorFileName) {
               if(sponsorFileName != "") {
                 ctrl.event.sponsorPhotoUrl = sponsorFileName;
-              }else {
-                ctrl.event.sponsorPhotoUrl = "File not found :("
               }
               ctrl.event.startAt = moment(ctrl.startAt).format('X');
               ctrl.event.endAt = moment(ctrl.endAt).format('X');
