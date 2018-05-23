@@ -211,8 +211,8 @@ class ApiAuthController extends Controller {
 
         $user = $this->getAuthUser();
 
-        $user->email = "";
-        $email = "";
+        $user->email = null;
+        $email = null;
         $user->save();
 
         return response()->json(compact('email'));
