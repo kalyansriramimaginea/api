@@ -11,7 +11,7 @@ class Event extends Eloquent {
 
  	protected $connection = 'mongodb';
 
- 	protected $fillable = ['name', 'eventCategoryId', 'photoUrl', 'sponsorPhotoUrl', 'sponsorUrl', 'about', 'venue', 'address', 'fbUrl', 'twUrl', 'inUrl', 'siteUrl', 'startAt', 'endAt', 'allDay'];
+ 	protected $fillable = ['name', 'eventCategoryId', 'photoUrl', 'sponsorPhotoUrl', 'sponsorUrl', 'about', 'venue', 'address', 'fbUrl', 'twUrl', 'inUrl', 'siteUrl', 'startAt', 'lat', 'lon', 'endAt', 'allDay'];
     protected $dates = ['deleted_at'];
 
 	protected $casts = [
@@ -44,6 +44,8 @@ class Event extends Eloquent {
 			'siteUrl' => $this->siteUrl,
 			'startAt' => (int)$this->startAt,
 			'endAt' => (int)$this->endAt,
+			'lat' => $this->lat,
+			'lon' => $this->lon,
 			'allDay' => $this->allDay
 		];
 	}

@@ -6,7 +6,7 @@
 
         var ctrl = this;
 
-        ctrl.vendor = {"vendorCategorId": "", "name": "", "photoUrl": "", "about": "", "siteUrl": "", "fbUrl": "", "twUrl": "", "inUrl": "", "lat": "", "lon": "", "sortOrder": 10000};
+        ctrl.vendor = {"vendorCategorId": "", "name": "", "photoUrl": "", "about": "", "address":"", "siteUrl": "", "fbUrl": "", "twUrl": "", "inUrl": "", "lat": "", "lon": "", "sortOrder": 10000};
 
 		vendorCategoryResource.getItems('vendor_category').then(function() {
 			ctrl.vendorCategories = vendorCategoryResource.items;

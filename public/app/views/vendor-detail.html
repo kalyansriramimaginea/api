@@ -50,6 +50,17 @@
 		    </tr>
 		    <!-- END photoUrl -->
 
+				<!-- address -->
+				<tr>
+					<td class="txt-right">
+						<label for="address">Address:</label>
+					</td>
+					<td>
+						<textarea id="address" style="height:140px;" ng-model="ctrl.vendor.address" ></textarea>
+					</td>
+				</tr>
+				<!-- END address -->
+
 			<!-- about -->
 			<tr>
 				<td class="txt-right">
@@ -123,6 +134,7 @@
 				</td>
 				<td>
 			  		<input id="lon" value="" maxlength="191" type="text" ng-model="ctrl.vendor.lon" />
+						<em>By entering the latitude/longitude info, users will be able to view this venue on the map app on their phone</em>
 				</td>
 			</tr>
 			<!-- END lon -->
