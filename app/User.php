@@ -52,7 +52,7 @@ class User extends Eloquent implements AuthenticatableContract, CanResetPassword
 
   	public static function rules() {
 		return [
-			'email' => 'sparse'
+			// 'email' => 'sparse'
       	];
   	}
 
