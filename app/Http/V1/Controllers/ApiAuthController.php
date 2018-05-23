@@ -211,8 +211,8 @@ class ApiAuthController extends Controller {
 
         $user = $this->getAuthUser();
 				$curTime = time();
-        $user->email = "NULL@EMAIL+" + $curTime;
-        $email = "NULL@EMAIL+"+ $curTime;
+        $user->email = "NULL@EMAIL+{$curTime}" ;
+        $email = "NULL@EMAIL+{$curTime}";
         $user->save();
 
         return response()->json(compact('email'));
