@@ -17,6 +17,22 @@
             }
         });
 
+
+        ctrl.getEmails = function() {
+
+            var baseHeaders	= { headers: {'Accept': 'application/vnd.p3.v1+json', 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + config.user.token} }
+            return $http.get(config.baseURL + '/users/installs/', baseHeaders)
+                .then(
+                    function(response){
+                        console.log(response)
+                        return;
+                    },
+                    function(response){
+                        console.log(response)
+                        return;
+                    }
+                );
+        };
         ctrl.save = function(){
 
             imageResource.upload(ctrl.photoUrlFile, function(fileName) {
