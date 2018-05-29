@@ -199,6 +199,24 @@ class ApiAuthController extends Controller {
         return response()->json(compact('username'));
 
     }
+    public function setEmail(Request $request) {
+
+        $user = $this->getAuthUser();
+        if($user) {
+
+            $installation = Installation::where('deviceToken', $request->deviceToken)->first();
+            if (!$installation) {
+                return response('User not found', 404);
+            }
+
+            $installation->setContactEmail($request->email);
+            $installation->save();
+            return response('', 200);
+        }
+
+        return response('', 200);
+
+    }
     public function getEmail() {
 
         $user = $this->getAuthUser();
