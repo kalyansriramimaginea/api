@@ -209,8 +209,7 @@ class ApiAuthController extends Controller {
             if (!$installation) {
                 return response('User not found', 404);
             }
-
-            $installation->contactEmail($request->email);
+            $installation->contactEmail = $request->email;
             $installation->save();
             return response('', 200);
         }
