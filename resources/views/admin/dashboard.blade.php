@@ -83,6 +83,7 @@
 	<script src="/app/controllers/messageController.js" defer="defer"></script>
 	<script src="/app/controllers/messageDetailController.js" defer="defer"></script>
 	<script src="/app/controllers/messagePushController.js" defer="defer"></script>
+	<script src="/app/controllers/messageGroupPushController.js" defer="defer"></script>
 	<script src="/app/controllers/adController.js" defer="defer"></script>
 	<script src="/app/resources/imageResource.js" defer="defer"></script>
 	<script src="/app/resources/itemResource.js" defer="defer"></script>

@@ -32,6 +32,11 @@
                 controller		: 'messagePushController',
                 controllerAs	: 'ctrl'
             })
+            .when('/message/group/push/:id', {
+                templateUrl		: '/app/views/message-group-push.html',
+                controller		: 'messageGroupPushController',
+                controllerAs	: 'ctrl'
+            })
             .when('/message/:id', {
                 templateUrl		: '/app/views/message-detail.html',
                 controller		: 'messageDetailController',
