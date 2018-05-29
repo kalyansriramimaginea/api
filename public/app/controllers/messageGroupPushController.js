@@ -2,7 +2,7 @@
 
     var app = angular.module('admin');
 
-    var messageGroupPushController = function($location, messageResource, messageTypeResource, imageResource, $sce, $routeParams, config){
+    var messageGroupPushController = function($location, messageResource, messageTypeResource, imageResource, $sce, $routeParams, config, $http){
 
         var ctrl = this;
         ctrl.sendAt = moment().format('M/DD/YYYY h:mm A');
