@@ -2,7 +2,7 @@
 
     var app = angular.module('admin');
 
-    var messageGroupPushController = function($location, messageResource, messageTypeResource, imageResource, $sce, $routeParams){
+    var messageGroupPushController = function($location, messageResource, messageTypeResource, imageResource, $sce, $routeParams, test){
 
         var ctrl = this;
         ctrl.sendAt = moment().format('M/DD/YYYY h:mm A');
@@ -21,6 +21,7 @@
 
         ctrl.getEmails = function() {
 
+            console.log($sce, $routeParams, test, $location)
             var baseHeaders	= { headers: {'Accept': 'application/vnd.p3.v1+json', 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + app.config.user.token} }
             return $http.get(app.config.baseURL + '/users/installs/', baseHeaders)
                 .then(
