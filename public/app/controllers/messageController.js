@@ -11,6 +11,7 @@
         });
 
         ctrl.create = function(path){
+            console.log(path, 'TEST')
 			$location.path('/message' + path + '/create');
         };
 
