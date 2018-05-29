@@ -12,7 +12,7 @@
         ctrl.sendAt = moment().format('M/DD/YYYY h:mm A');
         ctrl.message = {"messageType": "News", "locationId": "", "channels": "", "kind": "group-push", "message": "", "deepLink": "", "photoUrl": "", "push": 1, "locationOnly": 0, "sendAt": 0};
         ctrl.channels = [{'name': 'None', 'value': ''}];
-        ctrl.emails = [];
+        ctrl.tags = [];
         messageResource.getItems('message').then(function() {
             var listItem = messageResource.getItem($routeParams.id);
             if (listItem != null) {
@@ -29,11 +29,11 @@
             return $http.get(config.baseURL + '/users/installs/', baseHeaders)
                 .then(
                     function(response){
-                        ctrl.emails = response.data;
+                        ctrl.tags = response.data;
                         return;
                     },
                     function(response){
-                        ctrl.emails = []
+                        ctrl.tags = []
                         return;
                     }
                 );
@@ -60,7 +60,7 @@
 
 
         ctrl.loadData = function($query) {
-            return ctrl.emails.filter(function(email) {
+            return ctrl.tags.filter(function(email) {
                 return email.toLowerCase().indexOf($query.toLowerCase()) != -1;
             });
         };
