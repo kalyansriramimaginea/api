@@ -21,9 +21,8 @@
 
         ctrl.getEmails = function() {
 
-            console.log($sce, $routeParams,config, $location)
-            var baseHeaders	= { headers: {'Accept': 'application/vnd.p3.v1+json', 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + app.config.user.token} }
-            return $http.get(app.config.baseURL + '/users/installs/', baseHeaders)
+            var baseHeaders	= { headers: {'Accept': 'application/vnd.p3.v1+json', 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + config.user.token} }
+            return $http.get(config.baseURL + '/users/installs/', baseHeaders)
                 .then(
                     function(response){
                         console.log(response)
