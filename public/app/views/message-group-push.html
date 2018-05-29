@@ -35,6 +35,27 @@
                     <textarea id="message" ng-model="ctrl.message.message" ng-trim="false" maxlength="400"></textarea>
                 </td>
             </tr>
+
+            <tr>
+                <td class="txt-right">
+                    <div for="message" >Message:<br/><code>&lt;a href="#URL#"&gt;#TITLE#&lt;/a&gt;</code></div>
+                </td>
+                <td>
+                    <tags-input ng-model="ctrl.tags"
+                                add-from-autocomplete-only="true"
+                                add-on-enter="true"
+                                display-property="name"
+                                replace-spaces-with-dashes="false"
+                                placeholder="{{ctrl.placeholder}}">
+                        <auto-complete source="ctrl.loadData($query)"
+                                       min-length="0"
+                                       load-on-focus="true"
+                                       load-on-empty="true"></auto-complete>
+                    </tags-input>
+                </td>
+            </tr>
+
+
             <!-- END TEXTAREA -->
 
             <!-- MESSAGE TYPES -->

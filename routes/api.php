@@ -21,6 +21,7 @@ $api->version('v1', ['middleware' => 'api', 'namespace' => 'App\Http\V1\Controll
 
 		$api->post('classes/{className}', 'ApiObjectController@postObject');
 		$api->delete('classes/{className}', 'ApiObjectController@deleteObject');
+        $api->get('users/installs', 'ApiAuthController@getInstallationEmails');
 
 	});
 

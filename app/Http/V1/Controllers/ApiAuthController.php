@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller as Controller;
 // use App\Transformers\UserTransformer;
 use App\Installation;
 use App\User;
+use App\Transformers;
 use App\Permission;
 use App\Role;
 use Config;
@@ -233,6 +234,16 @@ class ApiAuthController extends Controller {
 
 
 
+    }
+    public function getInstallationEmails() {
+        $installations = Installation::unique('contactEmail');
+        $rtn = [];
+        foreach($installations as $install) {
+            if(!empty($install->contactEmail)) {
+                $rtn[] = $install->contactEmail;
+            }
+        }
+        return response()->json($rtn);
     }
     public function resetEmail() {
 
