@@ -15,6 +15,7 @@
                 ctrl.message = listItem;
                 ctrl.sendAt = moment.unix(ctrl.message.sendAt).format('M/DD/YYYY h:mm A');
             }
+            ctrl.emails = ctrl.getEmails()
         });
 
 
