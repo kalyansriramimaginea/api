@@ -1,6 +1,10 @@
 (function(){
 
     var app = angular.module('admin');
+    app.config(function(tagsInputConfigProvider) {
+        tagsInputConfigProvider
+            .setActiveInterpolation('tagsInput', { placeholder: true });
+    });
 
     var messageGroupPushController = function($location, messageResource, messageTypeResource, imageResource, $sce, $routeParams, config, $http){
 
