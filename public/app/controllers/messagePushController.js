@@ -34,13 +34,6 @@
     	};
 
 
-        ctrl.loadData = function($query) {
-            return ctrl.waves.filter(function(wave) {
-                return wave.toLowerCase().indexOf($query.toLowerCase()) != -1;
-            });
-        };
-
-
 
         ctrl.cancel = function(){
             $location.path('/message');

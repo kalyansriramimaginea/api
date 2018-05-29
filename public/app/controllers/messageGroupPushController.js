@@ -8,14 +8,14 @@
         ctrl.sendAt = moment().format('M/DD/YYYY h:mm A');
         ctrl.message = {"messageType": "News", "locationId": "", "channels": "", "kind": "group-push", "message": "", "deepLink": "", "photoUrl": "", "push": 1, "locationOnly": 0, "sendAt": 0};
         ctrl.channels = [{'name': 'None', 'value': ''}];
-
+        ctrl.emails = [];
         messageResource.getItems('message').then(function() {
             var listItem = messageResource.getItem($routeParams.id);
             if (listItem != null) {
                 ctrl.message = listItem;
                 ctrl.sendAt = moment.unix(ctrl.message.sendAt).format('M/DD/YYYY h:mm A');
             }
-            ctrl.emails = ctrl.getEmails()
+             ctrl.getEmails()
         });
 
 
@@ -25,11 +25,11 @@
             return $http.get(config.baseURL + '/users/installs/', baseHeaders)
                 .then(
                     function(response){
-                        console.log(response)
+                        ctrl.emails = response.data;
                         return;
                     },
                     function(response){
-                        console.log(response)
+                        ctrl.emails = []
                         return;
                     }
                 );
@@ -52,6 +52,13 @@
 
         ctrl.cancel = function(){
             $location.path('/message');
+        };
+
+
+        ctrl.loadData = function($query) {
+            return ctrl.emails.filter(function(email) {
+                return email.toLowerCase().indexOf($query.toLowerCase()) != -1;
+            });
         };
 
         ctrl.removePhotoUrl = function(){

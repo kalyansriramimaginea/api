@@ -41,12 +41,12 @@
                     <div for="message" >Message:<br/><code>&lt;a href="#URL#"&gt;#TITLE#&lt;/a&gt;</code></div>
                 </td>
                 <td>
-                    <tags-input ng-model="ctrl.tags"
+                    <tags-input ng-model="ctrl.emails"
                                 add-from-autocomplete-only="true"
                                 add-on-enter="true"
                                 display-property="name"
                                 replace-spaces-with-dashes="false"
-                                placeholder="{{ctrl.placeholder}}">
+                                placeholder="Emails">
                         <auto-complete source="ctrl.loadData($query)"
                                        min-length="0"
                                        load-on-focus="true"
