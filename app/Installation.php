@@ -8,7 +8,7 @@ class Installation extends Eloquent {
 
  	protected $connection = 'mongodb';
 
- 	protected $fillable = ['deviceToken', 'appId', 'appVersion', 'device', 'deviceName', 'deviceVersion', 'channels', 'timeZone'];
+ 	protected $fillable = ['deviceToken', 'appId', 'contactEmail', 'appVersion', 'device', 'deviceName', 'deviceVersion', 'channels', 'timeZone'];
     protected $dates = ['deleted_at'];
 
 	protected $casts = [
