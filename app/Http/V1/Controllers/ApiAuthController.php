@@ -236,7 +236,7 @@ class ApiAuthController extends Controller {
 
     }
     public function getInstallationEmails() {
-        $installations = Installation::unique('contactEmail');
+        $installations = Installation::all();
         $rtn = [];
         foreach($installations as $install) {
             if(!empty($install->contactEmail)) {
