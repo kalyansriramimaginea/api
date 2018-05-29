@@ -1,23 +1,23 @@
 (function(){
 
-	var app = angular.module('admin', ['LocalStorageModule', 'ngRoute', 'angularjs-datetime-picker']);
+    var app = angular.module('admin', ['LocalStorageModule', 'ngRoute', 'angularjs-datetime-picker']);
 
-	// ROUTING
-	app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-		$locationProvider.hashPrefix();
+    // ROUTING
+    app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        $locationProvider.hashPrefix();
 
-		$routeProvider
-			.when('/dashboard', {
+        $routeProvider
+            .when('/dashboard', {
                 templateUrl		: '/app/views/dashboard.html',
                 controller		: 'dashboardController',
                 controllerAs	: 'ctrl'
             })
-						.when('/ad', {
-							templateUrl : '/app/view/ad.html',
-							controller : 'adController',
-							controllerAs : 'ctrl'
-						})
-						.when('/ad/:id', {
+            .when('/ad', {
+                templateUrl : '/app/view/ad.html',
+                controller : 'adController',
+                controllerAs : 'ctrl'
+            })
+            .when('/ad/:id', {
                 templateUrl		: '/app/views/ad-detail.html',
                 controller		: 'adDetailController',
                 controllerAs	: 'ctrl'
@@ -146,94 +146,94 @@
                 redirectTo: '/admin/dashboard'
             });
 
-		$locationProvider.html5Mode(true);
+        $locationProvider.html5Mode(true);
 
-	}]);
+    }]);
 
-  	// VARIABLES
-  	app.value('config', {
-    	baseURL: 			'https://c1whistler.festeng.com',
-		bucket: 			'files.festivalengine.co',
-		cdnBaseURL:			'http://files.festivalengine.co',
-		appBucket:			'c1whistler',
-		fileSizeLimit: 		3000000
-  	});
+    // VARIABLES
+    app.value('config', {
+        baseURL: 			'https://c1whistler.festeng.com',
+        bucket: 			'files.festivalengine.co',
+        cdnBaseURL:			'http://files.festivalengine.co',
+        appBucket:			'c1whistler',
+        fileSizeLimit: 		3000000
+    });
 
-  	// LOCAL STORAGE
-	app.config(function(localStorageServiceProvider) {
-		localStorageServiceProvider.setStorageType('sessionStorage');
-	});
+    // LOCAL STORAGE
+    app.config(function(localStorageServiceProvider) {
+        localStorageServiceProvider.setStorageType('sessionStorage');
+    });
 
-	app.config(['$httpProvider', function($httpProvider) {
-	    //initialize get if not there
-	    if (!$httpProvider.defaults.headers.get) {
-	        $httpProvider.defaults.headers.get = {};
-	    }
-	    //disable IE ajax request caching
-	    $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
-	    $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
-	    $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
-	}]);
+    app.config(['$httpProvider', function($httpProvider) {
+        //initialize get if not there
+        if (!$httpProvider.defaults.headers.get) {
+            $httpProvider.defaults.headers.get = {};
+        }
+        //disable IE ajax request caching
+        $httpProvider.defaults.headers.get['If-Modified-Since'] = 'Mon, 26 Jul 1997 05:00:00 GMT';
+        $httpProvider.defaults.headers.get['Cache-Control'] = 'no-cache';
+        $httpProvider.defaults.headers.get['Pragma'] = 'no-cache';
+    }]);
 
-	app.run(function ($location, config, localStorageService) {
+    app.run(function ($location, config, localStorageService) {
 
-    	// CHECK FOR USER
-  		var user = localStorageService.get('user');
-		var role = localStorageService.get('role');
-  		if(user){
-  			config.user = user;
-  			config.role = role;
-  		} else {
-  			window.location = '/admin/login';
-  		}
+        // CHECK FOR USER
+        var user = localStorageService.get('user');
+        var role = localStorageService.get('role');
+        if(user){
+            config.user = user;
+            config.role = role;
+        } else {
+            window.location = '/admin/login';
+        }
 
-  	});
+    });
 
-	app.directive("ngFileModel", [function () {
-      	return {
-          	scope: {
-              	ngFileModel: "="
-          	},
-         	link: function (scope, element, attributes) {
-        		element.bind("change", function (changeEvent) {
-                	var reader = new FileReader();
-                  		reader.onload = function (loadEvent) {
-                      		scope.$apply(function () {
-                          	scope.ngFileModel = changeEvent.target.files[0];
-                      	});
-                  	}
-                  	reader.readAsDataURL(changeEvent.target.files[0]);
-              	});
-          	}
-      	}
-  	}]);
+    app.directive("ngFileModel", [function () {
+        return {
+            scope: {
+                ngFileModel: "="
+            },
+            link: function (scope, element, attributes) {
+                element.bind("change", function (changeEvent) {
+                    var reader = new FileReader();
+                    reader.onload = function (loadEvent) {
+                        scope.$apply(function () {
+                            scope.ngFileModel = changeEvent.target.files[0];
+                        });
+                    }
+                    reader.readAsDataURL(changeEvent.target.files[0]);
+                });
+            }
+        }
+    }]);
 
-	app.directive('hideon', function() {
-	    return function(scope, element, attrs) {
-	        scope.$watch(attrs.hideon, function(value, oldValue) {
-	            if(value) {
-	                element.hide();
-	            } else {
-	                element.show();
-	            }
-	        }, true);
-	    }
-	});
+    app.directive('hideon', function() {
+        return function(scope, element, attrs) {
+            scope.$watch(attrs.hideon, function(value, oldValue) {
+                if(value) {
+                    element.hide();
+                } else {
+                    element.show();
+                }
+            }, true);
+        }
+    });
 
-	app.filter('range', function() {
-		return function(input, min, max) {
-	    	min = parseInt(min); //Make string input int
-	    	max = parseInt(max);
-	    	for (var i=min; i<max; i++)
-	      		input.push(i);
-	    	return input;
-	  	};
-	});
+    app.filter('range', function() {
+        return function(input, min, max) {
+            min = parseInt(min); //Make string input int
+            max = parseInt(max);
+            for (var i=min; i<max; i++)
+                input.push(i);
+            return input;
+        };
+    });
 
-	app.filter('momentTime', function() {
-	  	return function(date) {
-	    	return moment.unix(date).format('MMM D, h:mm A');
-		}
-  	});
+    app.filter('momentTime', function() {
+        return function(date) {
+            return moment.unix(date).format('MMM D, h:mm A');
+        }
+    });
 
 }())

@@ -19,9 +19,11 @@
 				$location.path('/message/location/' + object.id);
 			} else if (object.kind == "beacon") {
 				$location.path('/message/beacon/' + object.id);
-			} else if (object.kind == "push") {
-				$location.path('/message/push/' + object.id);
-			} else {
+			} else if (object.kind == "group-push") {
+                $location.path('/message/push/' + object.id);
+            } else if (object.kind == "group-push") {
+                $location.path('/message/group-push/' + object.id);
+            } else {
 				$location.path('/message/' + object.id);
 			}
 		};

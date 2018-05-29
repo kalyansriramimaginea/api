@@ -6,7 +6,7 @@
 
         var ctrl = this;
         ctrl.sendAt = moment().format('M/DD/YYYY h:mm A');
-        ctrl.message = {"messageType": "News", "locationId": "", "channels": "", "kind": "push", "message": "", "deepLink": "", "photoUrl": "", "push": 1, "locationOnly": 0, "sendAt": 0};
+        ctrl.message = {"messageType": "News", "locationId": "", "channels": "", "kind": "group-push", "message": "", "deepLink": "", "photoUrl": "", "push": 1, "locationOnly": 0, "sendAt": 0};
         ctrl.channels = [{'name': 'None', 'value': ''}];
 
         messageResource.getItems('message').then(function() {
