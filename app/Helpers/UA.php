@@ -83,11 +83,11 @@ class UA
 			}
 	                            // ->setInApp($options);
 
-            var_dump('test');
 	        // NOT SCHEDULED
 	        if ($sendAt < time()) {
 	          if ($uaId == "") {
 	            $response = $push->send();
+                  var_dump('test2');
 	            var_dump($response);
 	          }
 	          return "";
@@ -99,6 +99,7 @@ class UA
 	                                  ->send();
 	              return $response->payload["schedule_ids"][0];
 	          } else {
+                  var_dump('test3');
 	            $response = $airship->scheduledPush()
 	                                ->setPush($push)
 	                                ->setSchedule(Push\scheduledTime($sendAt))
