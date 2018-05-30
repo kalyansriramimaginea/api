@@ -57,7 +57,6 @@ class UA
 
 	    $airship = new Airship(Config::get('airship.airshipKey'), Config::get('airship.airshipSecret'));
 
-        var_dump($airship);
 		try {
 
 	        $options = array();
@@ -84,6 +83,7 @@ class UA
 			}
 	                            // ->setInApp($options);
 
+            var_dump('test');
 	        // NOT SCHEDULED
 	        if ($sendAt < time()) {
 	          if ($uaId == "") {
