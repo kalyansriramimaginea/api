@@ -34,6 +34,7 @@ class UA
 			$audience = Push\all;
 		}
         if(!empty($request->get('targets'))) {
+            var_dump('test');
             $audience = [];
 
             foreach($request->get('targets') as $target) {
