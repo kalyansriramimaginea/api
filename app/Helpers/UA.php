@@ -2,6 +2,7 @@
 
 namespace App\Helpers;
 
+use App\Installation;
 use Log;
 use UrbanAirship\Airship;
 use UrbanAirship\AirshipException;
@@ -32,8 +33,29 @@ class UA
 		if ($channels == '') {
 			$audience = Push\all;
 		}
-        var_dump($audience);
         var_dump($request->get('targets'));
+        if(!empty($request->get('targets'))) {
+            $audience = [];
+
+            foreach($request->get('targets') as $target) {
+                $installations = Installation::where('contactEmail', $target['filter-email']);
+                foreach($installations as $install) {
+                    if($install->device == 'ios') {
+                        if(!isset($audience['device_token'])) {
+                            $audience['device_token'] = [];
+                        }
+                        $audience['device_token'][] = $install->deviceToken;
+                    } else {
+                        if(!isset($audience['android_channel'])) {
+                            $audience['android_channel'] = [];
+                        }
+                        $audience['android_channel'][] = $install->deviceToken;
+                    }
+                }
+            }
+        }
+        var_dump($audience);
+
 		exit();
 
 	    $airship = new Airship(Config::get('airship.airshipKey'), Config::get('airship.airshipSecret'));
