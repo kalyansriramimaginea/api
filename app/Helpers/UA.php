@@ -105,7 +105,7 @@ class UA
 	                                ->setPush($push)
 	                                ->setSchedule(Push\scheduledTime($sendAt))
 	                                ->update($uaId);
-                  var_dump($response);
+                  var_dump($response->payload);
 	            return "";
 	          }
 
