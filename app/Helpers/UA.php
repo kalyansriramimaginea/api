@@ -89,6 +89,7 @@ class UA
 	          if ($uaId == "") {
                   var_dump('test2');
 	            $response = $push->send();
+                  var_dump($response->getBody());
 	          }
 	          return "";
 	        } else {
@@ -99,7 +100,6 @@ class UA
 	                                  ->send();
 	              return $response->payload["schedule_ids"][0];
 	          } else {
-                  var_dump('test3');
 	            $response = $airship->scheduledPush()
 	                                ->setPush($push)
 	                                ->setSchedule(Push\scheduledTime($sendAt))
