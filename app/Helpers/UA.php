@@ -112,11 +112,11 @@ class UA
 	        }
 
 	    } catch (AirshipException $e) {
-            var_dump($e->details);
+            var_dump($e);
             Log::info($e->details);
             die;
         } catch (Exception $e) {
-            var_dump($e->details);
+            var_dump($e);
             die;
         }
 
