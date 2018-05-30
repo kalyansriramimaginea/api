@@ -4,6 +4,7 @@ namespace App\Helpers;
 
 use App\Installation;
 use Log;
+use Mockery\Exception;
 use UrbanAirship\Airship;
 use UrbanAirship\AirshipException;
 use UrbanAirship\UALog;
@@ -86,8 +87,8 @@ class UA
 	        // NOT SCHEDULED
 	        if ($sendAt < time()) {
 	          if ($uaId == "") {
-	            $response = $push->send();
                   var_dump('test2');
+	            $response = $push->send();
 	            var_dump($response);
 	          }
 	          return "";
@@ -111,10 +112,13 @@ class UA
 	        }
 
 	    } catch (AirshipException $e) {
-	      Log::info($e->details);
             var_dump($e->details);
-	      die;
-	    }
+            Log::info($e->details);
+            die;
+        } catch (Exception $e) {
+            var_dump($e->details);
+            die;
+        }
 
 	}
 
