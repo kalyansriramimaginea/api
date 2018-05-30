@@ -39,8 +39,8 @@ class UA
 
             foreach($request->get('targets') as $target) {
                 $installations = Installation::where('contactEmail', $target['filter-email']);
-                var_dump($installations->count());
                 foreach($installations as $install) {
+                    var_dump($install);
                     if($install->device == 'ios') {
                         if(!isset($audience['device_token'])) {
                             $audience['device_token'] = [];
