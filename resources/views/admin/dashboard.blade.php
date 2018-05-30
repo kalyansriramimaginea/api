@@ -73,6 +73,7 @@
 	<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js" defer="defer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js" defer="defer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+	<script src="https://mbenford.github.io/ngTagsInput/js/ng-tags-input.min.js" defer="defer"></script>
 	<script src="/app/common.js" defer="defer"></script>
 	<script src="/app/libs/aws/aws-sdk.min.js" defer="defer"></script>
 	<script src="/app/libs/jquery/locationpicker.jquery.min.js" defer="defer"></script>
