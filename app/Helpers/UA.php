@@ -28,33 +28,25 @@ class UA
 		if ($deepLink == '') {
 			$deepLink = env('APP_BUCKET') . "://inbox";
 		}
+        if(!empty($request->get('targets'))) {
+
+            foreach($request->get('targets') as $target) {
+                $install = Installation::where('contactEmail', $target['filter-email'])->first();
+                ///foreach($installations as $install) {
+                //var_dump($install);
+                if($install->device == 'ios') {
+                    $channels[] = $install->deviceToken;
+                } else {
+                    $channels[] = $install->deviceToken;
+                }
+                //}
+            }
+        }
 
 		$audience = array("tag" => $tags);
 		if ($channels == '') {
 			$audience = Push\all;
 		}
-        if(!empty($request->get('targets'))) {
-            //var_dump('test');
-            $audience = [];
-
-            foreach($request->get('targets') as $target) {
-                $install = Installation::where('contactEmail', $target['filter-email'])->first();
-                ///foreach($installations as $install) {
-                    //var_dump($install);
-                    if($install->device == 'ios') {
-                        if(!isset($audience['device_token'])) {
-                            $audience['device_token'] = [];
-                        }
-                        $audience['device_token'][] = $install->deviceToken;
-                    } else {
-                        if(!isset($audience['android_channel'])) {
-                            $audience['android_channel'] = [];
-                        }
-                        $audience['android_channel'][] = $install->deviceToken;
-                    }
-                //}
-            }
-        }
 
 	    $airship = new Airship(Config::get('airship.airshipKey'), Config::get('airship.airshipSecret'));
 
