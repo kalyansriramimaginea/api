@@ -55,9 +55,9 @@ class UA
             }
         }
 
-var_dump($audience);
 	    $airship = new Airship(Config::get('airship.airshipKey'), Config::get('airship.airshipSecret'));
 
+        var_dump($airship);
 		try {
 
 	        $options = array();
