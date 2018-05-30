@@ -28,6 +28,7 @@ class UA
 		if ($deepLink == '') {
 			$deepLink = env('APP_BUCKET') . "://inbox";
 		}
+        $audience = array("tag" => $tags);
         if(!empty($request->get('targets'))) {
 
             foreach($request->get('targets') as $target) {
@@ -47,12 +48,12 @@ class UA
                 }
                 //}
             }
+        } else {
+            if ($channels == '') {
+                $audience = Push\all;
+            }
         }
 
-        $audience = array("tag" => $tags);
-        if ($channels == '') {
-            $audience = Push\all;
-        }
 var_dump($audience);
 	    $airship = new Airship(Config::get('airship.airshipKey'), Config::get('airship.airshipSecret'));
 
