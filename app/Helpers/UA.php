@@ -89,7 +89,6 @@ class UA
 	          if ($uaId == "") {
                   var_dump('test2');
 	            $response = $push->send();
-	            var_dump($response->payload);
 	          }
 	          return "";
 	        } else {
@@ -105,14 +104,12 @@ class UA
 	                                ->setPush($push)
 	                                ->setSchedule(Push\scheduledTime($sendAt))
 	                                ->update($uaId);
-                  var_dump($response->payload);
 	            return "";
 	          }
 
 	        }
 
 	    } catch (AirshipException $e) {
-            var_dump($e);
             Log::info($e->details);
             die;
         } catch (Exception $e) {
