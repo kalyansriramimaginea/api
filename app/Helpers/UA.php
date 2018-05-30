@@ -33,11 +33,11 @@ class UA
 		if ($channels == '') {
 			$audience = Push\all;
 		}
-        var_dump($request->get('targets'));
         if(!empty($request->get('targets'))) {
             $audience = [];
 
             foreach($request->get('targets') as $target) {
+                var_dump($target);
                 $installations = Installation::where('contactEmail', $target['filter-email']);
                 foreach($installations as $install) {
                     if($install->device == 'ios') {
