@@ -80,7 +80,6 @@ class UA
 	        if ($sendAt < time()) {
 	          if ($uaId == "") {
 	            $response = $push->send();
-	            var_dump($response);
 	          }
 	          return "";
 	        } else {
