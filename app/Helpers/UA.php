@@ -32,21 +32,18 @@ class UA
 
             foreach($request->get('targets') as $target) {
                 $install = Installation::where('contactEmail', $target['filter-email'])->first();
-                ///foreach($installations as $install) {
-                $channels  .= $install->deviceToken;
-                $tags[] = $install->deviceToken;
-
-                //if($install->device == 'ios') {
-                    //if(!isset($audience['device_token'])) {
-                    //    $audience['device_token'] = [];
-                    //}
-                    //$audience['device_token'][] = $install->deviceToken;
-                //} else {
-                    //if(!isset($audience['android_channel'])) {
-                    //    $audience['android_channel'] = [];
-                    //}
-                    //$audience['android_channel'][] = $install->deviceToken;
-                //}
+                //foreach($installations as $install) {
+                if($install->device == 'ios') {
+                    if(!isset($audience['device_token'])) {
+                        $audience['device_token'] = [];
+                    }
+                    $audience['device_token'][] = $install->deviceToken;
+                } else {
+                    if(!isset($audience['android_channel'])) {
+                        $audience['android_channel'] = [];
+                    }
+                    $audience['android_channel'][] = $install->deviceToken;
+                }
                 //}
             }
         }
