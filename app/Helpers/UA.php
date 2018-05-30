@@ -33,7 +33,7 @@ class UA
 			$audience = Push\all;
 		}
         var_dump($audience);
-        var_dump($request);
+        var_dump($request->all());
 		exit();
 
 	    $airship = new Airship(Config::get('airship.airshipKey'), Config::get('airship.airshipSecret'));
