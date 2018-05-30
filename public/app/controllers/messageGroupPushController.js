@@ -65,7 +65,7 @@
 
         ctrl.loadData = function($query) {
             return ctrl.tags.filter(function(email) {
-                return email.toLowerCase().indexOf($query.toLowerCase()) != -1;
+                return email.name.toLowerCase().indexOf($query.toLowerCase()) != -1;
             });
         };
 
