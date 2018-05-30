@@ -103,6 +103,7 @@ var_dump($audience);
 	                                ->setPush($push)
 	                                ->setSchedule(Push\scheduledTime($sendAt))
 	                                ->update($uaId);
+                  var_dump($response);
 	            return "";
 	          }
 
