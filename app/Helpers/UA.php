@@ -89,7 +89,7 @@ class UA
 	          if ($uaId == "") {
                   var_dump('test2');
 	            $response = $push->send();
-	            var_dump($response);
+	            var_dump($response->payload);
 	          }
 	          return "";
 	        } else {
@@ -116,7 +116,7 @@ class UA
             Log::info($e->details);
             die;
         } catch (Exception $e) {
-            var_dump($e);
+            var_dump($e->getMessage());
             die;
         }
 
