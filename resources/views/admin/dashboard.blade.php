@@ -13,6 +13,7 @@
 	<meta http-equiv="CACHE-CONTROL" content="NO-STORE">
 		<!-- <link rel="shortcut icon" href="images/favicon.ico"> -->
 		<!--<link rel="apple-touch-icon" href="/apple-touch-icon.png">-->
+	<link rel="stylesheet" href="https://mbenford.github.io/ngTagsInput/css/ng-tags-input.min.css" />
 	<link rel="stylesheet" href="/app/css/app.css">
 	<link rel="stylesheet" href="/app/css/datetime.css">
 
