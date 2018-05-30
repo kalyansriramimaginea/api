@@ -46,6 +46,10 @@
                 }
 
                 ctrl.message.sendAt = moment(ctrl.sendAt).format('X');
+
+
+                ctrl.message.targets = ctrl.emails;
+
                 messageResource.saveItem('message', ctrl.message).then(function() {
                     $location.path('/message');
                 });
