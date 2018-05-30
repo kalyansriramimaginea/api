@@ -32,6 +32,9 @@ class UA
 		if ($channels == '') {
 			$audience = Push\all;
 		}
+        var_dump($audience);
+        var_dump($request);
+		exit();
 
 	    $airship = new Airship(Config::get('airship.airshipKey'), Config::get('airship.airshipSecret'));
 
