@@ -28,7 +28,7 @@ class UA
 		if ($deepLink == '') {
 			$deepLink = env('APP_BUCKET') . "://inbox";
 		}
-        $audience = array("tag" => $tags);
+        $audience = [];
         if(!empty($request->get('targets'))) {
 
             foreach($request->get('targets') as $target) {
@@ -49,6 +49,7 @@ class UA
                 //}
             }
         } else {
+            $audience = array("tag" => $tags);
             if ($channels == '') {
                 $audience = Push\all;
             }
