@@ -89,7 +89,6 @@ class UA
 	          if ($uaId == "") {
                   var_dump('test2');
 	            $response = $push->send();
-                  var_dump($response->getBody());
 	          }
 	          return "";
 	        } else {
@@ -110,6 +109,7 @@ class UA
 	        }
 
 	    } catch (AirshipException $e) {
+            var_dump('OOPS');
             Log::info($e->details);
             die;
         } catch (Exception $e) {
