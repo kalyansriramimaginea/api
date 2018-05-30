@@ -240,7 +240,7 @@ class ApiAuthController extends Controller {
         foreach($installations as $install) {
             if(!empty($install->contactEmail)) {
                 $rtn[] = [
-                    'name'=>$install->contactAlias .' '. $install->contactEmail,
+                    'name'=>implode([$install->contactAlias, $install->contactEmail], ' - ') ,
                     'filter-email'=>$install->contactEmail
                 ];
             }
