@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module('admin', ['LocalStorageModule', 'ngRoute', 'ngTagsInput','angularjs-datetime-picker']);
+    var app = angular.module('admin', ['LocalStorageModule', 'ngRoute', 'ngTagsInput','angularjs-datetime-picker', 'ui.bootstrap', 'ui.sortable']);
 
     // ROUTING
     app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
