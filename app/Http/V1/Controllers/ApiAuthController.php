@@ -165,6 +165,7 @@ class ApiAuthController extends Controller {
 
 		$installation->fill($request->all());
         $installation->contactEmail = "";
+        $installation->contactAlias = "";
 		$installation->save();
 
         return response('', 200);
