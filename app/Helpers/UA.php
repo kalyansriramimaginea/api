@@ -38,8 +38,8 @@ class UA
             $audience = [];
 
             foreach($request->get('targets') as $target) {
-                $installations = Installation::where('contactEmail', $target['filter-email'])->first();
-                foreach($installations as $install) {
+                $install = Installation::where('contactEmail', $target['filter-email'])->first();
+                ///foreach($installations as $install) {
                     var_dump($install);
                     if($install->device == 'ios') {
                         if(!isset($audience['device_token'])) {
@@ -52,7 +52,7 @@ class UA
                         }
                         $audience['android_channel'][] = $install->deviceToken;
                     }
-                }
+                //}
             }
         }
         var_dump($audience);
