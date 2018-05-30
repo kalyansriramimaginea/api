@@ -34,13 +34,13 @@ class UA
 			$audience = Push\all;
 		}
         if(!empty($request->get('targets'))) {
-            var_dump('test');
+            //var_dump('test');
             $audience = [];
 
             foreach($request->get('targets') as $target) {
                 $install = Installation::where('contactEmail', $target['filter-email'])->first();
                 ///foreach($installations as $install) {
-                    var_dump($install);
+                    //var_dump($install);
                     if($install->device == 'ios') {
                         if(!isset($audience['device_token'])) {
                             $audience['device_token'] = [];
@@ -88,6 +88,7 @@ class UA
 	        if ($sendAt < time()) {
 	          if ($uaId == "") {
 	            $response = $push->send();
+	            var_dump($response);
 	          }
 	          return "";
 	        } else {
