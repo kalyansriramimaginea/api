@@ -200,6 +200,7 @@ class ApiAuthController extends Controller {
         return response()->json(compact('username'));
 
     }
+
     public function setEmail(Request $request) {
 
         $user = $this->getAuthUser();
@@ -211,12 +212,13 @@ class ApiAuthController extends Controller {
             }
             $installation->contactEmail = $request->email;
             $installation->save();
-            return response('', 200);
+            return response('You did it', 200);
         }
 
-        return response('', 200);
+        return response('User not found', 404);
 
     }
+
     public function getEmail(Request $request) {
         $user = $this->getAuthUser();
         if($user) {
@@ -230,10 +232,8 @@ class ApiAuthController extends Controller {
         }
 
         return response('User not found', 420);
-
-
-
     }
+
     public function getInstallationEmails() {
         $installations = Installation::all();
         $rtn = [];
