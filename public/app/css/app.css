@@ -246,6 +246,7 @@ input.search{float:right; width:300px;}
 .segmented-control label{color:#444}
 .ui-sortable-helper { cursor: move; }
 #sortable td:hover { cursor: move; }
+.photoUrl { max-width: 100%; }
 
 .datepickerdemoBasicUsage {
   /** Demo styles for mdCalendar. */ }
