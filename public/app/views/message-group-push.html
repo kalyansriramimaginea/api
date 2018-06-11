@@ -2,18 +2,18 @@
     <h1>Group Push Message</h1>
     <div class="clear"></div>
     <div class="txt-left" hideon="!ctrl.toggleInfo">
-        <p><b>Web:</b> http://#URL#<p>
-        <p><b>Breaking News:</b> c1whistler://inbox<p>
-        <p><b>Event:</b> c1whistler://event<p>
-        <p><b>Event Detail:</b> c1whistler://event/#EVENT_ID#<p>
-        <p><b>Explore:</b> c1whistler://event<p>
-        <p><b>Explore Detail:</b> c1whistler://event/#EVENT_ID#<p>
-        <p><b>Map:</b> c1whistler://map<p>
-        <p><b>Camera:</b> c1whistler://camera<p>
-        <p><b>Helps:</b> c1whistler://help<p>
-        <p><b>Helps:</b> c1whistler://help/#HELP_ID#<p>
-        <p><b>Sponsors:</b> c1whistler://sponsor<p>
-    </p>
+        <p><b>Web:</b> http://#URL#</p>
+        <p><b>Breaking News:</b> c1whistler://inbox</p>
+        <p><b>Event:</b> c1whistler://event</p>
+        <p><b>Event Detail:</b> c1whistler://event/#EVENT_ID#</p>
+        <p><b>Explore:</b> c1whistler://event</p>
+        <p><b>Explore Detail:</b> c1whistler://event/#EVENT_ID#</p>
+        <p><b>Map:</b> c1whistler://map</p>
+        <p><b>Camera:</b> c1whistler://camera</p>
+        <p><b>Helps:</b> c1whistler://help</p>
+        <p><b>Helps:</b> c1whistler://help/#HELP_ID#</p>
+        <p><b>Sponsors:</b> c1whistler://sponsor</p>
+
         <div class="clear"></div>
     </div>
     <form ng-init="ctrl.load()" ng-submit="ctrl.save()">
@@ -29,7 +29,7 @@
             <!-- TEXTAREA -->
             <tr>
                 <td class="txt-right">
-                    <div for="message" >Message:<br/><code>&lt;a href="#URL#"&gt;#TITLE#&lt;/a&gt;</code></div>
+                    <div for="message" >Message:<br/><code>&lt;a href="#URL#"&gt;#TITLE#&lt;/a&gt;</code><br/><a ng-click="ctrl.toggleInfo=!ctrl.toggleInfo">Show Routes</a></div>
                 </td>
                 <td>
                     <textarea id="message" ng-model="ctrl.message.message" ng-trim="false" maxlength="400"></textarea>
