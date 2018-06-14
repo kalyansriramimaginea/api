@@ -72,7 +72,9 @@ class ApiMessageController extends Controller {
 				$object->uaId = UA::update("", $request, true);
 			}
 		}
-        $object->save();
+		if($request->kind != "group-push") {
+            $object->save();
+        }
 
 		Cache::forget('ETag.'.$request->path());
 
