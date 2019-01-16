@@ -152,7 +152,7 @@
 
     // VARIABLES
     app.value('config', {
-        baseURL: 			'https://c1whistler.festeng.com',
+        baseURL: 			'http://creativeone.imaginea-mobility.com',
         bucket: 			'files.festivalengine.co',
         cdnBaseURL:			'http://files.festivalengine.co',
         appBucket:			'c1whistler',

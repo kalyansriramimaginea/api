@@ -11,7 +11,7 @@
 
   // VARIABLES
   app.value('config', {
-    	baseURL: 'https://creativeone.imaginea-mobility.com',
+    	baseURL: 'http://creativeone.imaginea-mobility.com',
   });
 
   // LOCAL STORAGE

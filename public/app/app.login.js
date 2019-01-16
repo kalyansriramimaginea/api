@@ -20,7 +20,7 @@
 
   // VARIABLES
   app.value('config', {
-    	baseURL: 'https://c1whistler.festeng.com',
+    	baseURL: 'http://creativeone.imaginea-mobility.com',
   });
 
   // LOCAL STORAGE
