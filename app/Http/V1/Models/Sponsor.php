@@ -36,7 +36,7 @@ class Sponsor extends Eloquent {
 			'tierId' => $this->tierId,
 			'name' => $this->name,
 			'siteUrl' => $this->siteUrl,
-			'photoUrl' => $this->photoUrl,
+			'photoUrl' => str_replace('http://', 'https://s3.amazonaws.com/', $this->photoUrl),
 			'sortOrder' => (int)$this->sortOrder
 		];
 	}
