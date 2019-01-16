@@ -30,7 +30,7 @@ class Map extends Eloquent {
 	public function publicAttributes() {
 		return [
 			'name' => $this->name,
-			'photoUrl' => $this->photoUrl,
+			'photoUrl' => str_replace('http://', 'https://s3.amazonaws.com/', $this->photoUrl),
 			'sortOrder' => (int)$this->sortOrder
 		];
 	}
