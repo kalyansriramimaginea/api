@@ -33,7 +33,7 @@ class Help extends Eloquent {
 		return [
 			'question' => $this->question,
 			'answer' => $this->answer,
-			'photoUrl' => $this->photoUrl,
+			'photoUrl' => str_replace('http://', 'https://s3.amazonaws.com/', $this->photoUrl),
 			'sortOrder' => (int)$this->sortOrder
 		];
 	}
