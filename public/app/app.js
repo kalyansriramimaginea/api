@@ -152,7 +152,7 @@
 
     // VARIABLES
     app.value('config', {
-        baseURL: 			'http://creativeone.imaginea-mobility.com',
+        baseURL: 			'https://creativeone.imaginea-mobility.com/api',
         bucket: 			'files.festivalengine.co',
         cdnBaseURL:			'http://files.festivalengine.co',
         appBucket:			'c1whistler',
