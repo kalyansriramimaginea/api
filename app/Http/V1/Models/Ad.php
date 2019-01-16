@@ -32,7 +32,7 @@ class Ad extends Eloquent {
 		return [
 			'name' => $this->name,
 			'url' => $this->url,
-			'photoUrl' => $this->photoUrl,
+			'photoUrl' => str_replace('http://', 'https://s3.amazonaws.com/', $this->photoUrl),
 		];
 	}
 
